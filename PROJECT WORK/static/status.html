@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Status</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: linear-gradient(to right, rgb(216, 194, 0) , rgb(88, 195, 0));
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .status-container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+        }
+
+        #bookingIdForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        #booking_id {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .status-steps {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .status-step {
+            font-size: 16px;
+            margin-bottom: 1rem;
+            color: #333;
+            padding: 1rem;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .status-step:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0;
+            border-color: #3498db transparent transparent transparent;
+        }
+
+        .status-step:last-child:before {
+            display: none;
+        }
+
+        .status-step:nth-child(2) {
+            background-color: #2ecc71;
+            color: #fff;
+            border-color: #2ecc71;
+        }
+
+        .status-step:nth-child(3) {
+            background-color: #e74c3c;
+            color: #fff;
+            border-color: #e74c3c;
+        }
+
+        .status-step:nth-child(4) {
+            background-color: #f39c12;
+            color: #fff;
+            border-color: #f39c12;
+        }
+
+        .status-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .status-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-container">
+        <h2>Booking Status</h2>
+        <div id="bookingIdForm">
+            <label for="booking_id">Enter Booking ID:</label>
+            <input type="text" id="booking_id" name="booking_id" required>
+            <button class="status-button" onclick="checkBooking()">Check Status</button>
+        </div>
+        <div class="status-steps" id="statusSteps">
+            <div class="status-step">Booking Confirmed</div>
+            <div class="status-step">Your Booking has been Packed</div>
+            <div class="status-step">Your Booking has been shipped through SAI Logistics - FMPP188297</div>
+            <div class="status-step" id="stopStep">Your Booking is yet to be delivered within 2 working days</div>
+        </div>
+        <form action="status.html">
+        <button class="status-button" onclick="goToHome()">Back to Home</button>
+    </div>
+</form>
+    <script>
+        function checkBooking() {
+            var bookingId = document.getElementById('booking_id').value.toUpperCase();
+            var bookingIdForm = document.getElementById('bookingIdForm');
+            var statusSteps = document.getElementById('statusSteps');
+            var stopStep = document.getElementById('stopStep');
+
+            if (bookingId === '2023S14AI') {
+                bookingIdForm.style.display = 'none';
+                statusSteps.style.display = 'flex';
+                stopStep.style.border = '2px solid #e74c3c';
+            } else {
+                alert('Invalid Booking ID. Please enter a valid ID.');
+            }
+        }
+
+        function goToHome() {
+            // Redirect to the home page or use your own logic
+            window.location.href = "D:/EVERYTHING/PROJECT WORK/templates/index.html";
+        }
+    </script>
+</body>
+</html>

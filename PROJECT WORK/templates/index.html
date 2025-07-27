@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods Transfer Booking</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/13/74/b2/1374b2c3ea525bcfa5ee2d3fc25cba25.png">
+</head>
+<body>
+    <a name="home"></a>
+    <header>
+        <h1>GOODS TRANSFER BOOKING</h1>
+    </header>
+    <div class="container">
+    <div class="menu_icon_box" >
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <div class="box">
+            <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="static/login.html" target="_blank">Login</a></li>
+                <li><a href="static/status.html"target="_blank">Status of Booking</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="static/cancel booking.html"target="_blank">Cancel Booking</a></li>
+                <li><a ></a></li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+    </div>
+    <main>
+        <section class="booking-form">
+            <h2>Book Your Transfer</h2>
+            <form action="http://127.0.0.1:5000/result" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" required>
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+                <label for="pickup_location">Pickup Location:</label>
+                <input type="text" id="pickup_location" name="pickup_location" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="vehicle_type">Vehicle Type:</label>
+                <select id="vehicle_type" name="vehicle_type" required>
+                    <option value="Flight">Flight</option>
+                    <option value="Lorry">Lorry</option>
+                    <option value="Ship">Ship</option>
+                    <option value="Train">Train</option>
+                </select>
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" readonly>
+                <div id="card-element"></div>
+                <a href="static/payment.html" id="refLink">
+                <button id="pay-button" type="button"><span></span>Pay Now</button>
+                </a>
+                <button type="submit"><span></span>Book Now</button>
+            </form>
+            <div id="payment-status"></div>
+        </section>
+        
+        <!-- Contact Us section -->
+        <a name="contact"></a>
+        <section class="contact-us">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or inquiries, feel free to reach out to us.</p>
+            </div>
+            <div class="location">
+                <h2>Our Location</h2>
+                <p>Makkammathota, Karimnagar, Telangana</p>
+                <p>Phone: +91 7032882407</p>
+                <p>Email: sainithin448@gmail.com</p>
+            </div>
+        </section>
+    </main>
+    <script src="static/script.js"></script>
+</body>
+</html>

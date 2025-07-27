@@ -1,0 +1,203 @@
+ /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'ChatGPTFont';
+            src: url('chatgpt-font.woff2') format('woff2'),
+                 url('chatgpt-font.woff') format('woff');
+            /* Other font properties */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp3704690.png');
+            /* Adjust the image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.9;
+            background-position: center;
+        }
+
+        header {
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            padding: 2rem;
+            background-image: url('https://th.bing.com/th/id/R.2d3d66958f6212d174c543128260036f?rik=3CtnsHh1wzI%2fQg&riu=http%3a%2f%2fwww.animatedimages.org%2fdata%2fmedia%2f271%2fanimated-ship-image-0012.gif&ehk=VFDDd9e3OHVObfVB62PSGfWsGHIKYjdhcYCKRzPxkec%3d&risl=&pid=ImgRaw&r=0');
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .booking-form {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+            color: black;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        form input,
+        form select,
+        form button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid black;
+        }
+
+        form button {
+            color:red;
+            cursor: pointer;
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+            font-weight: bold;
+            margin: 30px 20px;
+            width: 350px;
+            padding:15px 0;
+            border: 3px solid rgb(8, 8, 8);
+
+        }
+        span{
+            background:black;
+            height: 100%;
+            width: 0;
+            position: absolute; 
+            left: 0;
+            bottom:0;
+            z-index: -1;
+            transition: 0.5s;
+
+        }
+        button:hover span{
+            width:100%;
+        }
+
+        .contact-us {
+            padding: 2rem;
+            background-color: transparent;
+            color:rgb(0, 0, 0);
+            border:2px solid rgb(0, 0, 0);
+            background-color:white;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+        }
+       /* Add your CSS styles here, including styles for autocomplete suggestions */
+.autocomplete-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 999;
+    width: 100%;
+}
+
+.autocomplete-suggestion {
+    padding: 5px;
+    cursor: pointer;
+}
+.box{
+ width: fit-content;
+ background-color:transparent;
+ height: 10vh;
+ position: relative;
+ text-align: left;
+ z-index: 1;
+ opacity:0 ;
+ left:-500px;
+ pointer-events:none;
+ transition:0.3s ;
+}
+.active.box{
+    opacity: 1;
+    left: 0px;
+    pointer-events: fill;
+}
+.menu_icon_box{
+    z-index: 2;
+   width: fit-content;
+   height:auto;
+   background-color:transparent;
+   margin: 10px;
+   position: absolute;
+   border-radius: 2px;
+   cursor: pointer;
+  
+}
+.line1 , .line2 , .line3{
+    width: 30px;
+    height: 4px;
+    margin: 10px 8px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+     transition: 0.2s;
+}
+.active .line1{
+    transform: translate(0px, 15px)rotate(45deg);
+}
+.active .line2{
+    opacity:0;
+}
+.active .line1{
+    transform: translate(0px, -15px)rotate(-45deg);
+}
+nav{
+    padding-top: 100px;
+    background-color: #ffffff;
+}
+nav ul{
+    margin:0px 30px;
+}
+nav ul li{
+    list-style:none;
+    margin-bottom:30px;
+    transition: 0.2s;
+}
+nav ul li:hover{
+     background-color: #ff0000a5;
+     border-radius: 8px;
+}
+nav ul li a{
+    color:#000;
+    font-size:19px;
+    padding:10px 30px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
